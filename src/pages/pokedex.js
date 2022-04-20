@@ -36,7 +36,7 @@ const getPokemon = async () => {
   }
 
   return (
-    <Layout pageTitle="pokedex">
+    <div pageTitle="pokedex">
       onSubmit={handleSubmit}>
         <label>
           <input
@@ -75,7 +75,7 @@ const getPokemon = async () => {
           </div>
         );
       })}
-    </Layout>
+    </div>
   );
 };
 
