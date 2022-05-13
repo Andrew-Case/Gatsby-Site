@@ -1,6 +1,6 @@
 import * as React from 'react'
-import Layout from '../components/layout'
 import axios from 'axios'
+import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 
 const Pokedex = () => {
   const [pokemon, setPokemon] = useState("pikachu");
@@ -72,10 +72,56 @@ const getPokemon = async () => {
                 <div className="divTableCell">{data.game_indices.length}</div>
               </div>
             </div>
+            <ResponsiveContainer width="100%" height="100%">
+                <RadarChart cx="50%" cy="50%" outerRadius="80%" data={
+                    [
+                        {
+                            subject: "HP",
+                            A:data.stats[0].base_stat,
+                            fullMark: 200,
+                        }
+                        {
+                            subject: "Attack",
+                            A:data.stats[1].base_stat,
+                            fullMark: 200,
+                        }
+                        {
+                            subject: "Defense",
+                            A:data.stats[2].base_stat,
+                            fullMark: 200,
+                        }
+                        {
+                            subject: "Special Attack",
+                            A:data.stats[3].base_stat,
+                            fullMark: 200,
+                        }
+                        {
+                            subject: "Special Defense",
+                            A:data.stats[4].base_stat,
+                            fullMark: 200,
+                        }
+                        {
+                            subject: "Speed",
+                            A:data.stats[5].base_stat,
+                            fullMark: 200,
+                        }
+                    ]
+                
+                
+                }>
+
+
+                  <PolarGrid />
+                  <PolarAngleAxis dataKey="subject" />
+                  <PolarRadiusAxis />
+                  <Radar name="PokeStats" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+                </RadarChart>
+          </ResponsiveContainer>
           </div>
         );
       })}
-    </div>
+
+        </div>
   );
 };
 
