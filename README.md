@@ -6,3 +6,5 @@ This began with the simple tutorial pages and eventually evolved into the web ba
 
 Use of the Pokedex is simple: At the top is a simple text submission form. In this form you can submit the name or pokedex number of any pokemon.
 Once entered the website will display the name, type, and stats of the pokemon alongside an image and some simple descriptive information like weight.
+
+The Pokedex uses PokeAPI to obtain the information about the pokemon and uses Recharts to display the graph of pokemon stats is a way similar to what's seen in the games.
